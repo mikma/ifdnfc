@@ -40,9 +40,9 @@ main(int argc, char *argv[])
   SCARDCONTEXT hContext;
   SCARDHANDLE hCard;
   char *reader;
-  BYTE pbSendBuffer[1 + 1 + sizeof(nfc_connstring)];
+  BYTE pbSendBuffer[1 + sizeof(uint16_t) + sizeof(nfc_connstring)];
   DWORD dwSendLength;
-  BYTE pbRecvBuffer[1];
+  BYTE pbRecvBuffer[1 + sizeof(uint16_t) + sizeof(nfc_connstring)];
   DWORD dwActiveProtocol, dwRecvLength, dwReaders;
   char* mszReaders = NULL;
 
